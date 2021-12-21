@@ -38,8 +38,7 @@ export function ScanScreen({navigation}: {navigation: any}) {
         onRead={onSuccess}
         // @ts-ignore
         flashMode={RNCamera.Constants.FlashMode.torch}
-        topContent={<Text>Blah blah</Text>}
-        bottomContent={<></>}
+        topContent={<Text>Please scan QR code for redemption</Text>}
       />
     </Provider>
   );

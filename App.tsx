@@ -12,6 +12,11 @@ import {Text, View} from 'react-native';
 import {ScanScreen} from './components/ScanScreen';
 import {MyProfileScreen} from './components/MyProfileScreen';
 import {AppContextInterface, AppContext} from './AppContext';
+import {CustomNavigationBar} from './components/CustomNavigationBar';
+import {LogBox} from 'react-native';
+
+LogBox.ignoreLogs(['EventEmitter.removeListener']);
+
 const Stack = createStackNavigator();
 
 const CustomFallback = (props: {error: Error; resetError: Function}) => (
@@ -33,6 +38,12 @@ export default function App() {
     signIn: () => {
       setSignedIn(true);
     },
+    signOut: () => {
+      setSignedIn(false);
+    },
+    isSignedIn: () => {
+      return isSignedIn;
+    },
     registerUser: () => {},
   };
 
@@ -41,7 +52,10 @@ export default function App() {
       <ErrorBoundary FallbackComponent={CustomFallback}>
         <AppContext.Provider value={appContext}>
           <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator
+              screenOptions={{
+                header: props => <CustomNavigationBar {...props} />,
+              }}>
               {isSignedIn ? (
                 <>
                   <Stack.Screen name="Home" component={HomeScreen} />
@@ -55,7 +69,7 @@ export default function App() {
                     name="SignIn"
                     component={SignInScreen}
                     options={{
-                      title: 'Hackathon frontend app :)',
+                      title: 'Awesome hackathon green app',
                     }}
                   />
                   <Stack.Screen name="Login" component={LoginInScreen} />
