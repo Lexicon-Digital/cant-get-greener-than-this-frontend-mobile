@@ -2,14 +2,25 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {HomeScreen} from './components/HomeScreen';
+import {SignInScreen} from './components/SignInScreen';
+import {SignUpScreen} from './components/SignUpScreen';
 
 const Stack = createStackNavigator();
 
 export default function App() {
+  const isSignedIn = false;
+
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Navigator>
+        {isSignedIn ? (
+          <Stack.Screen name="Home" component={HomeScreen} />
+        ) : (
+          <>
+            <Stack.Screen name="Sign In" component={SignInScreen} />
+            <Stack.Screen name="Sign Up" component={SignUpScreen} />
+          </>
+        )}
         {/*<Stack.Screen name="Details" component={DetailsScreen} />*/}
       </Stack.Navigator>
     </NavigationContainer>
