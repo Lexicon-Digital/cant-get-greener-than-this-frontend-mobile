@@ -1,17 +1,20 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import styled from 'styled-components';
 import {Button, TextInput} from 'react-native-paper';
+import {AppContext} from '../App';
 
 // @ts-ignore
-export function LoginInScreen() {
+export function LoginInScreen({navigation}) {
+  const appContext = React.useContext(AppContext);
   return (
     <ViewContainer>
       <TextInput label="Email" />
       <TextInput label="Password" secureTextEntry={true} />
       <Button
         onPress={() => {
-          console.log('Submit pressed');
+          appContext?.signIn();
+          navigation.goBack();
         }}>
         Login
       </Button>
