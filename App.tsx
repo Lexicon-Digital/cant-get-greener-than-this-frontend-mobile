@@ -15,7 +15,7 @@ import {RegisterScreen} from './components/RegisterScreen';
 import {LoginInScreen} from './components/LoginScreen';
 import {Text, View} from 'react-native';
 import {ScanScreen} from './components/ScanScreen';
-import {MyProfileScreen} from './components/MyProfileScreen';
+import {RedemptionHistoryScreen} from './components/RedemptionHistoryScreen';
 import {AppContextInterface, AppContext} from './AppContext';
 import {CustomNavigationBar} from './components/CustomNavigationBar';
 import {LogBox} from 'react-native';
@@ -79,11 +79,41 @@ export default function App() {
               }}>
               {isSignedIn ? (
                 <>
-                  <Stack.Screen name="Home" component={HomeScreen} />
-                  <Stack.Screen name="My Profile" component={MyProfileScreen} />
-                  <Stack.Screen name="Map View" component={MapScreen} />
-                  <Stack.Screen name="Scan" component={ScanScreen} />
-                  <Stack.Screen name="About" component={AboutScreen} />
+                  <Stack.Screen
+                    name="Home"
+                    component={HomeScreen}
+                    options={{
+                      title: 'Home',
+                    }}
+                  />
+                  <Stack.Screen
+                    name="Redemption history"
+                    component={RedemptionHistoryScreen}
+                    options={{
+                      title: 'Redemption history',
+                    }}
+                  />
+                  <Stack.Screen
+                    name="Map View"
+                    component={MapScreen}
+                    options={{
+                      title: 'Map',
+                    }}
+                  />
+                  <Stack.Screen
+                    name="Scan"
+                    component={ScanScreen}
+                    options={{
+                      title: 'Scan QR code',
+                    }}
+                  />
+                  <Stack.Screen
+                    name="About"
+                    component={AboutScreen}
+                    options={{
+                      title: 'About',
+                    }}
+                  />
                 </>
               ) : (
                 <>
@@ -91,12 +121,30 @@ export default function App() {
                     name="SignIn"
                     component={SignInScreen}
                     options={{
-                      title: 'Awesome hackathon green app',
+                      title: 'Sign in',
                     }}
                   />
-                  <Stack.Screen name="Login" component={LoginInScreen} />
-                  <Stack.Screen name="Register" component={RegisterScreen} />
-                  <Stack.Screen name="About" component={AboutScreen} />
+                  <Stack.Screen
+                    name="Login"
+                    component={LoginInScreen}
+                    options={{
+                      title: 'Log in',
+                    }}
+                  />
+                  <Stack.Screen
+                    name="Register"
+                    component={RegisterScreen}
+                    options={{
+                      title: 'Registration',
+                    }}
+                  />
+                  <Stack.Screen
+                    name="About"
+                    component={AboutScreen}
+                    options={{
+                      title: 'About',
+                    }}
+                  />
                 </>
               )}
             </Stack.Navigator>

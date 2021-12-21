@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import {Modal, Portal, Provider} from 'react-native-paper';
 import {RNCamera} from 'react-native-camera';
@@ -7,6 +7,7 @@ import {IMAGE_TICK} from '../images';
 import styled from 'styled-components';
 import {StackNavigationProp} from '@react-navigation/stack/src/types';
 import {ParamListBase} from '@react-navigation/native';
+import {AppContext} from '../AppContext';
 
 export function ScanScreen({
   navigation,
@@ -15,7 +16,6 @@ export function ScanScreen({
 }) {
   const [qrContent, setQrContent] = React.useState('');
   const containerStyle = {backgroundColor: 'white', padding: 20};
-
   const onSuccess = (e: any) => {
     setQrContent(e.data);
     setTimeout(() => {

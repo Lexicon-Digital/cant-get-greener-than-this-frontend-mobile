@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View} from 'react-native';
 import {
   Button,
@@ -11,10 +11,9 @@ import {
 } from 'react-native-paper';
 import styled from 'styled-components';
 import {SAVE_RECORDS} from '../constants/profile';
-import {StackNavigationProp} from '@react-navigation/stack/src/types';
-import {ParamListBase} from '@react-navigation/native';
+import {AppContext} from '../AppContext';
 
-export function MyProfileScreen({navigation}: {navigation: StackNavigationProp<ParamListBase>;}) {
+export function RedemptionHistoryScreen() {
   return (
     <HomeContainer>
       <Headline>Thank you!</Headline>

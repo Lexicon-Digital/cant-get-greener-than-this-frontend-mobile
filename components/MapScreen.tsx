@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import MapView, {Marker} from 'react-native-maps';
 import {View} from 'react-native';
 import styled from 'styled-components';

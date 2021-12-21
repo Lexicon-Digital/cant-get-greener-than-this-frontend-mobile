@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {ScrollView, Text} from 'react-native';
 import styled from 'styled-components';
 import {Avatar, Card, Paragraph, Title} from 'react-native-paper';
 import {IMAGE_KENNY, IMAGE_STAN, IMAGE_ZHENG} from '../images';
+import {AppContext} from '../AppContext';
 
 export function AboutScreen() {
   return (

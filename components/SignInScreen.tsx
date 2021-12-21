@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, Image, Dimensions} from 'react-native';
 import {Button, Divider} from 'react-native-paper';
 import styled from 'styled-components';
 import {StackNavigationProp} from '@react-navigation/stack/src/types';
 import {ParamListBase} from '@react-navigation/native';
 import {IMAGE_BACKGROUND} from '../images';
+import {AppContext} from '../AppContext';
 
 // Store width in variable
 const width = Dimensions.get('window').width;
@@ -22,9 +23,7 @@ export function SignInScreen({
         style={{width: width, height: height * 0.75}}
         source={IMAGE_BACKGROUND}
       />
-      <Button onPress={() => navigation.navigate('Register')}>
-        Register
-      </Button>
+      <Button onPress={() => navigation.navigate('Register')}>Register</Button>
       <Divider />
       <Button onPress={() => navigation.navigate('Login')}>Login</Button>
     </ViewContainer>
