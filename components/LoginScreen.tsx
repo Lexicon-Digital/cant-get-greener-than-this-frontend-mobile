@@ -2,7 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 import styled from 'styled-components';
 import {Button, TextInput} from 'react-native-paper';
-import {AppContext} from '../App';
+import {AppContext} from '../AppContext';
 
 // @ts-ignore
 export function LoginInScreen({navigation}) {

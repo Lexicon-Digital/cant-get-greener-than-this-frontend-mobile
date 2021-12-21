@@ -16,7 +16,7 @@ export function HomeScreen({navigation}: {navigation: any}) {
         onPress={() => navigation.navigate('Map View')}>
         Map View
       </HomeButton>
-      <HomeButton mode="outlined" onPress={() => console.log('Pressed')}>
+      <HomeButton mode="outlined" onPress={() => navigation.navigate('Scan')}>
         Scan
       </HomeButton>
     </HomeContainer>

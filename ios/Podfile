@@ -19,6 +19,8 @@ target 'hackathon_frontend' do
 
 
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'hackathon_frontendTests' do
     inherit! :complete
     # Pods for testing
