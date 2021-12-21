@@ -13,7 +13,7 @@ import styled from 'styled-components';
 import {SAVE_RECORDS} from '../constants/profile';
 import {AppContext} from '../AppContext';
 
-export function RedemptionHistoryScreen() {
+export function GasDiscountHistory() {
   return (
     <HomeContainer>
       <Headline>Thank you!</Headline>

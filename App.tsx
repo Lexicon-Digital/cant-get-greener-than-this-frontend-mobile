@@ -15,7 +15,7 @@ import {RegisterScreen} from './components/RegisterScreen';
 import {LoginInScreen} from './components/LoginScreen';
 import {Text, View} from 'react-native';
 import {ScanScreen} from './components/ScanScreen';
-import {RedemptionHistoryScreen} from './components/RedemptionHistoryScreen';
+import {GasDiscountHistory} from './components/GasDiscountHistory';
 import {AppContextInterface, AppContext} from './AppContext';
 import {CustomNavigationBar} from './components/CustomNavigationBar';
 import {LogBox} from 'react-native';
@@ -87,10 +87,10 @@ export default function App() {
                     }}
                   />
                   <Stack.Screen
-                    name="Redemption history"
-                    component={RedemptionHistoryScreen}
+                    name="Gas discount history"
+                    component={GasDiscountHistory}
                     options={{
-                      title: 'Redemption history',
+                      title: 'Gas discount history',
                     }}
                   />
                   <Stack.Screen
@@ -152,7 +152,7 @@ export default function App() {
         </AppContext.Provider>
         <Snackbar
           visible={snackBarText !== ''}
-          duration={3000}
+          duration={2000}
           onDismiss={onDismissSnackBar}>
           {snackBarText}
         </Snackbar>

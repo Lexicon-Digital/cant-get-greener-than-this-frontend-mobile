@@ -39,7 +39,7 @@ export function CustomNavigationBar({
       {!back && appContext?.isSignedIn() ? (
         <Appbar.Action
           icon="fuel"
-          onPress={() => navigation.navigate('Redemption history')}
+          onPress={() => navigation.navigate('Gas discount history')}
         />
       ) : null}
       {!back && appContext?.isSignedIn() ? (

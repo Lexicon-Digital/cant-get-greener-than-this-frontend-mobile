@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {View, Text, ActivityIndicator} from 'react-native';
+import React, {useState} from 'react';
+import {ActivityIndicator, ScrollView, View} from 'react-native';
 import styled from 'styled-components';
-import {TextInput, Button} from 'react-native-paper';
+import {Button, TextInput} from 'react-native-paper';
 import {TEXT_INPUT_STYLE} from '../constants';
 import {StackNavigationProp} from '@react-navigation/stack/src/types';
 import {ParamListBase} from '@react-navigation/native';
@@ -46,7 +46,7 @@ export function RegisterScreen({
   );
 }
 
-const ViewContainer = styled(View)`
+const ViewContainer = styled(ScrollView)`
   flex-direction: column;
 `;
 

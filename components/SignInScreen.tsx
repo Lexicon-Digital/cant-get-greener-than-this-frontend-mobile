@@ -4,8 +4,7 @@ import {Button, Divider} from 'react-native-paper';
 import styled from 'styled-components';
 import {StackNavigationProp} from '@react-navigation/stack/src/types';
 import {ParamListBase} from '@react-navigation/native';
-import {IMAGE_BACKGROUND} from '../images';
-import {AppContext} from '../AppContext';
+import {IMAGE_BACKGROUND, IMAGE_PLANET} from '../images';
 
 // Store width in variable
 const width = Dimensions.get('window').width;
@@ -18,7 +17,6 @@ export function SignInScreen({
 }) {
   return (
     <ViewContainer>
-      {/* todo: nice app image here  */}
       <Image
         style={{width: width, height: height * 0.75}}
         source={IMAGE_BACKGROUND}
