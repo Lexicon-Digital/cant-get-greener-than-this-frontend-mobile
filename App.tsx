@@ -8,15 +8,11 @@ import {MapScreen} from './components/MapScreen';
 import {SignInScreen} from './components/SignInScreen';
 import {RegisterScreen} from './components/RegisterScreen';
 import {LoginInScreen} from './components/LoginScreen';
-import {View, Text} from 'react-native';
+import {Text, View} from 'react-native';
+import {ScanScreen} from './components/ScanScreen';
+import {AppContextInterface, AppContext} from './AppContext';
+
 const Stack = createStackNavigator();
-
-export interface AppContextInterface {
-  signIn: () => void;
-  registerUser: () => void;
-}
-
-export const AppContext = React.createContext<AppContextInterface | null>(null);
 
 const CustomFallback = (props: {error: Error; resetError: Function}) => (
   <View>
@@ -50,6 +46,7 @@ export default function App() {
                 <>
                   <Stack.Screen name="Home" component={HomeScreen} />
                   <Stack.Screen name="Map View" component={MapScreen} />
+                  <Stack.Screen name="Scan" component={ScanScreen} />
                 </>
               ) : (
                 <>
