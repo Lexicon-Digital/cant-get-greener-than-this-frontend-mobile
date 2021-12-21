@@ -8,6 +8,11 @@ export function HomeScreen({navigation}: {navigation: any}) {
     <HomeContainer>
       <HomeButton
         mode="outlined"
+        onPress={() => navigation.navigate('My Profile')}>
+        My Profile
+      </HomeButton>
+      <HomeButton
+        mode="outlined"
         onPress={() => navigation.navigate('Map View')}>
         Map View
       </HomeButton>

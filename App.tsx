@@ -9,6 +9,7 @@ import {SignInScreen} from './components/SignInScreen';
 import {RegisterScreen} from './components/RegisterScreen';
 import {LoginInScreen} from './components/LoginScreen';
 import {View, Text} from 'react-native';
+import {MyProfileScreen} from './components/MyProfileScreen';
 const Stack = createStackNavigator();
 
 export interface AppContextInterface {
@@ -49,6 +50,7 @@ export default function App() {
               {isSignedIn ? (
                 <>
                   <Stack.Screen name="Home" component={HomeScreen} />
+                  <Stack.Screen name="My Profile" component={MyProfileScreen} />
                   <Stack.Screen name="Map View" component={MapScreen} />
                 </>
               ) : (
