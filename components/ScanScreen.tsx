@@ -5,8 +5,14 @@ import {RNCamera} from 'react-native-camera';
 import {Image, Text, View} from 'react-native';
 import {IMAGE_TICK} from '../images';
 import styled from 'styled-components';
+import {StackNavigationProp} from '@react-navigation/stack/src/types';
+import {ParamListBase} from '@react-navigation/native';
 
-export function ScanScreen({navigation}: {navigation: any}) {
+export function ScanScreen({
+  navigation,
+}: {
+  navigation: StackNavigationProp<ParamListBase>;
+}) {
   const [qrContent, setQrContent] = React.useState('');
   const containerStyle = {backgroundColor: 'white', padding: 20};
 

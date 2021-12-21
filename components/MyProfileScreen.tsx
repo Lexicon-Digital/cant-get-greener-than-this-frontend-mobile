@@ -11,8 +11,10 @@ import {
 } from 'react-native-paper';
 import styled from 'styled-components';
 import {SAVE_RECORDS} from '../constants/profile';
+import {StackNavigationProp} from '@react-navigation/stack/src/types';
+import {ParamListBase} from '@react-navigation/native';
 
-export function MyProfileScreen({navigation}: {navigation: any}) {
+export function MyProfileScreen({navigation}: {navigation: StackNavigationProp<ParamListBase>;}) {
   return (
     <HomeContainer>
       <Headline>Thank you!</Headline>
@@ -25,6 +27,7 @@ export function MyProfileScreen({navigation}: {navigation: any}) {
           <Title>Earned Gas Discounts</Title>
           {SAVE_RECORDS.map(({amount, date}) => (
             <List.Item
+              key={amount}
               title={`Saved $${amount}`}
               description={date}
               left={props => (

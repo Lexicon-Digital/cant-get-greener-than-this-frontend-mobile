@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
-import {Button, Provider as PaperProvider} from 'react-native-paper';
+import {
+  Button,
+  DefaultTheme,
+  Provider as PaperProvider,
+} from 'react-native-paper';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import ErrorBoundary from 'react-native-error-boundary';
@@ -32,6 +36,16 @@ const CustomFallback = (props: {error: Error; resetError: Function}) => (
   </View>
 );
 
+const theme = {
+  ...DefaultTheme,
+  roundness: 2,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#0c8a28',
+    accent: '#f1c40f',
+  },
+};
+
 export default function App() {
   const [isSignedIn, setSignedIn] = useState<boolean>(false);
   const appContext: AppContextInterface = {
@@ -48,7 +62,7 @@ export default function App() {
   };
 
   return (
-    <PaperProvider>
+    <PaperProvider theme={theme}>
       <ErrorBoundary FallbackComponent={CustomFallback}>
         <AppContext.Provider value={appContext}>
           <NavigationContainer>
