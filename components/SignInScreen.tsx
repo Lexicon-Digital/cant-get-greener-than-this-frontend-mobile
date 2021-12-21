@@ -7,7 +7,7 @@ export function SignInScreen({navigation}) {
   return (
     <View style={{justifyContent: 'center', alignItems: 'center'}}>
       {/* todo: nice app image here  */}
-      <Button>Registration</Button>
+      <Button>Register me</Button>
       <Divider />
       <Text>Already a member?</Text>
       <Button onPress={() => navigation.navigate('Login')}>Login</Button>

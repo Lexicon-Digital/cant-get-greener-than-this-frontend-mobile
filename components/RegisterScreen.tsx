@@ -4,7 +4,7 @@ import {View, Text} from 'react-native';
 export function RegisterScreen() {
   return (
     <View>
-      <Text>Sign Up Screen placeholder</Text>
+      <Text>Registration screen placeholder</Text>
     </View>
   );
 }
