@@ -18,7 +18,7 @@ export function AboutScreen() {
       </Card>
       <Card>
         <Card.Title
-          title="The dreamer"
+          title="Zheng the dreamer"
           subtitle=""
           left={props => <Avatar.Image {...props} source={IMAGE_ZHENG} />}
         />
@@ -31,7 +31,7 @@ export function AboutScreen() {
       </Card>
       <Card>
         <Card.Title
-          title="The happy go lucky"
+          title="Stan the happy go lucky"
           subtitle=""
           left={props => <Avatar.Image {...props} source={IMAGE_STAN} />}
         />
@@ -43,7 +43,7 @@ export function AboutScreen() {
       </Card>
       <Card>
         <Card.Title
-          title="The grunt"
+          title="Kenny the grunt"
           subtitle=""
           left={props => <Avatar.Image {...props} source={IMAGE_KENNY} />}
         />

@@ -118,7 +118,7 @@ export default function App() {
               ) : (
                 <>
                   <Stack.Screen
-                    name="SignIn"
+                    name="Sign In"
                     component={SignInScreen}
                     options={{
                       title: 'Sign in',

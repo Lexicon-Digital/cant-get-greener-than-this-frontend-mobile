@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {Dimensions, ScrollView, View} from 'react-native';
-import {Button, Divider, Text} from 'react-native-paper';
+import {Button, Divider, Text, Title} from 'react-native-paper';
 import styled from 'styled-components';
 import {LineChart, ProgressChart} from 'react-native-chart-kit';
 
@@ -38,6 +38,22 @@ export function HomeScreen() {
   };
   return (
     <HomeContainer>
+      <Row>
+        <Box style={{backgroundColor: '#fc7b03'}}>
+          <Column>
+            <Title>CO2</Title>
+            <Text>Goal: 3.0t</Text>
+            <Text>Current: 2.1t</Text>
+          </Column>
+        </Box>
+        <Box style={{backgroundColor: '#37ab1a'}}>
+          <Column>
+            <Title>Discount</Title>
+            <Text>$156.0</Text>
+          </Column>
+        </Box>
+      </Row>
+      <Divider />
       <Text>CO2 target reduction goal</Text>
       <ProgressChart
         data={data}
@@ -90,7 +106,6 @@ export function HomeScreen() {
           // borderRadius: 16,
         }}
       />
-      <Divider />
     </HomeContainer>
   );
 }
@@ -98,4 +113,23 @@ export function HomeScreen() {
 const HomeContainer = styled(ScrollView)`
   flex-direction: column;
   margin: 10px;
+`;
+
+const Column = styled(View)`
+  flex-direction: column;
+  text-align: center;
+`;
+
+const Row = styled(View)`
+  flex-direction: row;
+`;
+
+const Box = styled(View)`
+  flex-grow: 1
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  border: 1px;
+  padding: 5px;
 `;
