@@ -9,6 +9,12 @@ import {LoginInScreen} from './components/LoginScreen';
 
 const Stack = createStackNavigator();
 
+export interface AppContextInterface {
+  registerUser: () => void;
+}
+
+export const AppContext = React.createContext<AppContextInterface | null>(null);
+
 export default function App() {
   const isSignedIn = false;
 
@@ -20,7 +26,13 @@ export default function App() {
             <Stack.Screen name="Home" component={HomeScreen} />
           ) : (
             <>
-              <Stack.Screen name="SignIn" component={SignInScreen} />
+              <Stack.Screen
+                name="SignIn"
+                component={SignInScreen}
+                options={{
+                  title: 'Hackathon frontend app :)',
+                }}
+              />
               <Stack.Screen name="Login" component={LoginInScreen} />
               <Stack.Screen name="Register" component={RegisterScreen} />
             </>
