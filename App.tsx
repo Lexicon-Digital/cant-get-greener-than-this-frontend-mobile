@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import ErrorBoundary from 'react-native-error-boundary';
 import {HomeScreen} from './components/HomeScreen';
+import {MapScreen} from './components/MapScreen';
 import {SignInScreen} from './components/SignInScreen';
 import {RegisterScreen} from './components/RegisterScreen';
 import {LoginInScreen} from './components/LoginScreen';
@@ -46,7 +47,10 @@ export default function App() {
           <NavigationContainer>
             <Stack.Navigator>
               {isSignedIn ? (
-                <Stack.Screen name="Home" component={HomeScreen} />
+                <>
+                  <Stack.Screen name="Home" component={HomeScreen} />
+                  <Stack.Screen name="Map View" component={MapScreen} />
+                </>
               ) : (
                 <>
                   <Stack.Screen
