@@ -8,7 +8,9 @@ export function SignInScreen({navigation}) {
   return (
     <ViewContainer>
       {/* todo: nice app image here  */}
-      <Button onPress={() => navigation.navigate('Register')}>Register me</Button>
+      <Button onPress={() => navigation.navigate('Register')}>
+        Register me
+      </Button>
       <Divider />
       <Text>Already a member?</Text>
       <Button onPress={() => navigation.navigate('Login')}>Login</Button>
