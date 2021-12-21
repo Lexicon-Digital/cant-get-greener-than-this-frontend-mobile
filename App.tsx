@@ -3,6 +3,7 @@ import {
   Button,
   DefaultTheme,
   Provider as PaperProvider,
+  Snackbar,
 } from 'react-native-paper';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -18,6 +19,7 @@ import {MyProfileScreen} from './components/MyProfileScreen';
 import {AppContextInterface, AppContext} from './AppContext';
 import {CustomNavigationBar} from './components/CustomNavigationBar';
 import {LogBox} from 'react-native';
+import {AboutScreen} from './components/AboutScreen';
 
 LogBox.ignoreLogs(['EventEmitter.removeListener']);
 
@@ -48,6 +50,9 @@ const theme = {
 
 export default function App() {
   const [isSignedIn, setSignedIn] = useState<boolean>(false);
+  const [snackBarText, setSnackBarText] = React.useState('');
+  const onDismissSnackBar = () => setSnackBarText('');
+
   const appContext: AppContextInterface = {
     signIn: () => {
       setSignedIn(true);
@@ -58,7 +63,9 @@ export default function App() {
     isSignedIn: () => {
       return isSignedIn;
     },
-    registerUser: () => {},
+    registerUser: () => {
+      setSnackBarText('User registered');
+    },
   };
 
   return (
@@ -76,6 +83,7 @@ export default function App() {
                   <Stack.Screen name="My Profile" component={MyProfileScreen} />
                   <Stack.Screen name="Map View" component={MapScreen} />
                   <Stack.Screen name="Scan" component={ScanScreen} />
+                  <Stack.Screen name="About" component={AboutScreen} />
                 </>
               ) : (
                 <>
@@ -88,11 +96,18 @@ export default function App() {
                   />
                   <Stack.Screen name="Login" component={LoginInScreen} />
                   <Stack.Screen name="Register" component={RegisterScreen} />
+                  <Stack.Screen name="About" component={AboutScreen} />
                 </>
               )}
             </Stack.Navigator>
           </NavigationContainer>
         </AppContext.Provider>
+        <Snackbar
+          visible={snackBarText !== ''}
+          duration={3000}
+          onDismiss={onDismissSnackBar}>
+          {snackBarText}
+        </Snackbar>
       </ErrorBoundary>
     </PaperProvider>
   );

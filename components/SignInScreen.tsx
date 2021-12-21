@@ -23,10 +23,9 @@ export function SignInScreen({
         source={IMAGE_BACKGROUND}
       />
       <Button onPress={() => navigation.navigate('Register')}>
-        Register me
+        Register
       </Button>
       <Divider />
-      {/*<Text>Already a member?</Text>*/}
       <Button onPress={() => navigation.navigate('Login')}>Login</Button>
     </ViewContainer>
   );

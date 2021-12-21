@@ -32,12 +32,19 @@ export function CustomNavigationBar({
           {appContext?.isSignedIn() && (
             <Menu.Item
               onPress={() => {
+                closeMenu();
                 appContext?.signOut();
               }}
               title="Log out"
             />
           )}
-          <Menu.Item onPress={() => {}} title="About" />
+          <Menu.Item
+            onPress={() => {
+              closeMenu();
+              navigation.navigate('About');
+            }}
+            title="About"
+          />
         </Menu>
       ) : null}
     </Appbar.Header>

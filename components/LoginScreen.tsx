@@ -1,37 +1,48 @@
-import React from 'react';
-import {View} from 'react-native';
+import React, {useState} from 'react';
+import {ActivityIndicator, View} from 'react-native';
 import styled from 'styled-components';
 import {Button, TextInput} from 'react-native-paper';
 import {AppContext} from '../AppContext';
 import {TEXT_INPUT_STYLE} from '../constants';
-import {StackNavigationProp} from '@react-navigation/stack/src/types';
-import {ParamListBase} from '@react-navigation/native';
 
-export function LoginInScreen({
-  navigation,
-}: {
-  navigation: StackNavigationProp<ParamListBase>;
-}) {
+export function LoginInScreen() {
+  const [spinner, setSpinner] = useState(false);
   const appContext = React.useContext(AppContext);
   return (
-    <ViewContainer>
-      <TextInput label="Email" style={TEXT_INPUT_STYLE} />
-      <TextInput
-        label="Password"
-        secureTextEntry={true}
-        style={TEXT_INPUT_STYLE}
-      />
-      <Button
-        onPress={() => {
-          appContext?.signIn();
-          navigation.goBack();
-        }}>
-        Login
-      </Button>
-    </ViewContainer>
+    <>
+      {spinner ? (
+        <CenterContainer>
+          <ActivityIndicator size="large" />
+        </CenterContainer>
+      ) : (
+        <ViewContainer>
+          <TextInput label="Email" style={TEXT_INPUT_STYLE} />
+          <TextInput
+            label="Password"
+            secureTextEntry={true}
+            style={TEXT_INPUT_STYLE}
+          />
+          <Button
+            onPress={() => {
+              setSpinner(true);
+              setTimeout(() => {
+                appContext?.signIn();
+              }, 2000);
+            }}>
+            Login
+          </Button>
+        </ViewContainer>
+      )}
+    </>
   );
 }
 
 const ViewContainer = styled(View)`
   flex-direction: column;
+`;
+
+const CenterContainer = styled(View)`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 `;
