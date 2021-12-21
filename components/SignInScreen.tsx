@@ -1,10 +1,16 @@
 import React from 'react';
 import {View, Text} from 'react-native';
+import {Button, Divider} from 'react-native-paper';
 
-export function SignInScreen() {
+// @ts-ignore
+export function SignInScreen({navigation}) {
   return (
-    <View>
-      <Text>Sign in Screen placeholder</Text>
+    <View style={{justifyContent: 'center', alignItems: 'center'}}>
+      {/* todo: nice app image here  */}
+      <Button>Registration</Button>
+      <Divider />
+      <Text>Already a member?</Text>
+      <Button onPress={() => navigation.navigate('Login')}>Login</Button>
     </View>
   );
 }
