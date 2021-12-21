@@ -1,12 +1,14 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import {Button} from 'react-native-paper';
 import styled from 'styled-components';
 
-export function HomeScreen() {
+export function HomeScreen({navigation}: {navigation: any}) {
   return (
     <HomeContainer>
-      <HomeButton mode="outlined" onPress={() => console.log('Pressed')}>
+      <HomeButton
+        mode="outlined"
+        onPress={() => navigation.navigate('Map View')}>
         Map View
       </HomeButton>
       <HomeButton mode="outlined" onPress={() => console.log('Pressed')}>

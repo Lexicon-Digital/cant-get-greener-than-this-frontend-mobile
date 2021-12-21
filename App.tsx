@@ -3,20 +3,24 @@ import {Provider as PaperProvider} from 'react-native-paper';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {HomeScreen} from './components/HomeScreen';
+import {MapScreen} from './components/MapScreen';
 import {SignInScreen} from './components/SignInScreen';
 import {SignUpScreen} from './components/SignUpScreen';
 
 const Stack = createStackNavigator();
 
 export default function App() {
-  const isSignedIn = false;
+  const isSignedIn = true;
 
   return (
     <PaperProvider>
       <NavigationContainer>
         <Stack.Navigator>
           {isSignedIn ? (
-            <Stack.Screen name="Home" component={HomeScreen} />
+            <>
+              <Stack.Screen name="Home" component={HomeScreen} />
+              <Stack.Screen name="Map View" component={MapScreen} />
+            </>
           ) : (
             <>
               <Stack.Screen name="Sign In" component={SignInScreen} />
